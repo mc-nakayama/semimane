@@ -1,24 +1,45 @@
-# README
+## semimane
+### About（概要）
+- 訪問セミナー講師向け
+- for Tutors of seminars 
+- 講座、教室or会場、日程、収支を登録して週間／月間で管理可能！
+- If you use this application, you can manage "venues" , "schedule", "balance of payments".
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## URL
 
-Things you may want to cover:
+## Test Account（テストアカウント）
 
-* Ruby version
 
-* System dependencies
+## Usage(利用方法)
 
-* Configuration
+## Purpose of Use(目的)
+ 
 
-* Database creation
+## Business Requirements（要件定義）
 
-* Database initialization
+## Description（説明）
+- ruby2.6.3/rails6.0.0
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
 
-* ...
+## Plans（予定）
+
+## ER(DB設計)
+
+### venues_table
+|Cloumn|Type|Options|
+|---|---|---|
+|name|string|null:false, unique:true|
+|adress|string|null:false|
+|tel-number|integer||
+
+### Assosciaion
+
+
+## How to Use of Your Local(ダウンロード後の利用方法)
+
+## License（ライセンス）
+
+## Authors
+Michitoshi Nakayama
