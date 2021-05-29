@@ -26,16 +26,61 @@
 ## Plans（予定）
 
 ## ER(DB設計)
+### seminars_table
+|Column|Type|Options|
+|---|---|---|
+|name|string|unique:true,index:true|
+|style|string|null:false|
+
+#### Assosciaion
+- has_many:groups,through: :semininars-venues
+- has_many:schedules
 
 ### venues_table
-|Cloumn|Type|Options|
+|Column|Type|Options|
 |---|---|---|
 |name|string|null:false, unique:true|
 |adress|string|null:false|
-|tel-number|integer||
+|tel|integer|null:false|
+|memo|text||
+|image|text||
 
-### Assosciaion
+#### Assosciaion
+- has_many:seminars,through: :seminars-venues
 
+### seminars-venues-table
+|Column|Type|Options|
+|---|---|---|
+|seminar|reference|foreign_key:true|
+|venue|reference|foreign_key:true|
+
+#### Assosciaion
+- belongs_to :seminar
+- belongs_to :belong
+
+### schedules_table
+|Column|Type|Options|
+|---|---|---|
+|scheduled_date|date|null:false|
+|scheduled_time|time|null:false|
+|revervation|integer|null:false|
+|participants|interger|null:false|
+|seminars_id|reference|foreign_key:true|
+
+#### Assosciaion
+- belongs_to:seminar
+- has_one:balace_of_payment
+
+### balance_of_payments_table
+|Column|Type|Options|
+|---|---|---|
+|per_earning|integer||
+|per_cost|integer||
+|other_cost|integer||
+
+#### Assosciaion
+- belongs_to:schedule
+- has_one:schdule
 
 ## How to Use of Your Local(ダウンロード後の利用方法)
 
