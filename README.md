@@ -33,7 +33,7 @@
 |style|string|null:false|
 
 #### Assosciaion
-- has_many:groups,through: :semininars-venues
+- has_many:venues,through: :semininars-venues
 - has_many:schedules
 
 ### venues_table
