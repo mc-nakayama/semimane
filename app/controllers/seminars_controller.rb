@@ -10,13 +10,12 @@ class SeminarsController < ApplicationController
   def create
     @seminar = Seminar.new
     if @seminar.save(seminar_params)
-      redirect_to root_path, notice: 'グループを作成しました'      
+      redirect_to root_path, notice: 'グループを作成しました'
     else
       render :new
     end
   end
   
+  def seminar_params
   end
-  
-  
 end
