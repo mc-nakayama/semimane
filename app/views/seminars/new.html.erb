@@ -1,1 +1,7 @@
 <h1>new<h1>
+
+<%= form_with(model:@seminar,local:true) do |form| %>
+  <%= form.text_field :name, placeholder:"セミナー名"%>
+  <%= form.text_field :style, placeholder:"スタイル" %>
+  <%= form.submit "登録する" %>
+<% end %>

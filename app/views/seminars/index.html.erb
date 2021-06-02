@@ -1,1 +1,15 @@
 <h1>index</h1>
+
+<h2>講座一覧</h2>
+
+<div class ="button_new_seminar">
+  <%= link_to "新規講座を登録する", new_seminar_path %>
+</div>
+
+<div class="container">
+  <%= @seminars.each do |seminar| %>
+    <div class="container_seminar">]
+      <p>text</p>
+    </div>
+  <% end %>
+</div>
