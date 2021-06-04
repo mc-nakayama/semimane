@@ -16,6 +16,8 @@ class SeminarsController < ApplicationController
     end
   end
   
+  private
   def seminar_params
+    params.require(:seminar).permit(:name,:style)
   end
 end
