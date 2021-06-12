@@ -8,8 +8,8 @@ class SeminarsController < ApplicationController
   end
 
   def create
-    @seminar = Seminar.new
-    if @seminar.save(seminar_params)
+    @seminar = Seminar.new(seminar_params)
+    if @seminar.save
       redirect_to root_path, notice: 'グループを作成しました'
     else
       render :new
@@ -18,6 +18,6 @@ class SeminarsController < ApplicationController
   
   private
   def seminar_params
-    params.require(:seminar).permit(:name,:style)
+    params.require(:seminar).permit(:name,:style,:description)
   end
 end

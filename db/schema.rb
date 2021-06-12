@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2021_06_01_135244) do
   create_table "seminars", force: :cascade do |t|
     t.string "name", null: false
     t.string "style", null: false
+    t.text "description", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["name"], name: "index_seminars_on_name"

@@ -7,9 +7,11 @@
 </div>
 
 <div class="container">
-  <%= @seminars.each do |seminar| %>
-    <div class="container_seminar">]
-      <p>text</p>
+  <% @seminars.each do |seminar| %>
+    <div class="container_seminar">
+    <%= seminar.name %>
+    <%= seminar.style %>
+    <%= seminar.description %>
     </div>
   <% end %>
 </div>

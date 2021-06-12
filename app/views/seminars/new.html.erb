@@ -2,6 +2,7 @@
 
 <%= form_with(model:@seminar,local:true) do |form| %>
   <%= form.text_field :name, placeholder:"セミナー名"%>
-  <%= form.text_field :style, placeholder:"スタイル" %>
+  <%= form.select :style, [["オンライン","オンライン"],["対面","対面"],["オンライン／対面","オンライン／対面"]],include_blank: "選択してください" %>
+  <%= form.text_area :description, placeholder:"セミナーの説明", col:20, rows:10 %>
   <%= form.submit "登録する" %>
 <% end %>
