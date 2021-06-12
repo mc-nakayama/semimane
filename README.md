@@ -31,9 +31,10 @@
 |---|---|---|
 |name|string|unique:true,index:true|
 |style|string|null:false|
+|description|text|null:false|
 
 #### Assosciaion
-- has_many:groups,through: :semininars-venues
+- has_many:venues,through: :semininars-venues
 - has_many:schedules
 
 ### venues_table
