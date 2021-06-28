@@ -41,6 +41,7 @@
 |Column|Type|Options|
 |---|---|---|
 |name|string|null:false, unique:true|
+|postal_code|string|null:false|
 |address|string|null:false|
 |tel|string|null:false|
 |memo|text||
