@@ -1,0 +1,8 @@
+<h1>seminar_new<h1>
+
+<%= form_with(model:@venue,local:true) do |f| %>
+  <%= f.text_field :name, placeholder:"会場名"%>
+  <%= f.text_field :address %>
+  <%= f.text_area :description, placeholder:"セミナーの説明", col:20, rows:10 %>
+  <%= f.submit "登録する" %>
+<% end %>

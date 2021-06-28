@@ -1,8 +1,8 @@
-<h1>new<h1>
+<h1>seminar_new<h1>
 
-<%= form_with(model:@seminar,local:true) do |form| %>
-  <%= form.text_field :name, placeholder:"セミナー名"%>
-  <%= form.select :style, [["オンライン","オンライン"],["対面","対面"],["オンライン／対面","オンライン／対面"]],include_blank: "選択してください" %>
-  <%= form.text_area :description, placeholder:"セミナーの説明", col:20, rows:10 %>
-  <%= form.submit "登録する" %>
+<%= form_with(model:@seminar,local:true) do |f| %>
+  <%= f.text_field :name, placeholder:"セミナー名"%>
+  <%= f.select :style, [["オンライン","オンライン"],["対面","対面"],["オンライン／対面","オンライン／対面"]],include_blank: "選択してください" %>
+  <%= f.text_area :description, placeholder:"セミナーの説明", col:20, rows:10 %>
+  <%= f.submit "登録する" %>
 <% end %>

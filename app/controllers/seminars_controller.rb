@@ -1,6 +1,7 @@
 class SeminarsController < ApplicationController
   def index
     @seminars = Seminar.all
+    @venues = Venue.all
   end
 
   def new
@@ -10,7 +11,7 @@ class SeminarsController < ApplicationController
   def create
     @seminar = Seminar.new(seminar_params)
     if @seminar.save
-      redirect_to root_path, notice: 'グループを作成しました'
+      redirect_to root_path, notice: 'セミナーを登録しました'
     else
       render :new
     end
