@@ -13,10 +13,15 @@ class VenuesController < ApplicationController
       redirect_to root_path, notice: 'を登録しました'
     else
       render :new
+    end
   end
 
+
+
   private
+
   def venue_params
-    params.require(:venue).permit(:name,:address,:tel,:memo,:image)
+    params.require(:venue).permit(:name,:postal_code,:address,:tel,:memo,:image)
   end
+
 end
