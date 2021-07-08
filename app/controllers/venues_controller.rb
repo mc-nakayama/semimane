@@ -1,5 +1,5 @@
 class VenuesController < ApplicationController
-  before_action :set_venue, only:[:edit,:show] 
+  before_action :set_venue, only:[:show,:edit] 
 
   def index
     @venues = Venue.all
@@ -24,8 +24,22 @@ class VenuesController < ApplicationController
   def edit
   end
 
-  private
+  def update
+    venue = Venue.find(params[:id])
+    if venue.update(venue_params)
+      redirect_to venue_path(venue.id), notice: 'を更新しました'
+    else
+      render :edit
+    end
+  end
 
+  def destroy
+    venue = Venue.find(params[:id])
+    venue.destroy
+    redirect_to root_path, notice: '削除しました'
+  end
+
+  private
   def venue_params
     params.require(:venue).permit(:name,:postal_code,:address,:tel,:memo,:image)
   end
@@ -33,4 +47,5 @@ class VenuesController < ApplicationController
   def set_venue
     @venue = Venue.find(params[:id])
   end
+
 end

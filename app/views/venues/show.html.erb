@@ -1,9 +1,21 @@
 <h1>venue_show</h1>
 
-<div class= "venue_row">
-  <%= @venue.name %>
-  <%= @venue.postal_code %>
-  <%= @venue.address %>
-  <%= @venue.tel %>
-  <%= @venue.memo %>
+<div class="contents_row">
+  <div class= "contents">
+    <%= @venue.name %>
+    <%= @venue.postal_code %>
+    <%= @venue.address %>
+    <%= @venue.tel %>
+    <%= @venue.memo %>
+  </div>
+  <div class="more">
+  <ul class="more_list">
+    <li>
+      <%= link_to '編集', edit_venue_path(@venue.id) %>
+    </li>
+    <li>
+      <%= link_to '削除',venue_path(@venue.id), method: :delete %>
+    </li>
+  </ul>
+  </div>
 </div>
