@@ -1,0 +1,15 @@
+<h1>seminar_new<h1>
+
+<%= form_with(model:@venue,local:true) do |f| %>
+  <%= f.label :name,"会場名" %>
+  <%= f.text_field :name, placeholder:"会場名"%>
+  <%= f.label :postal_code,"郵便番号" %>
+  <%= f.text_field :postal_code, placeholder:"郵便番号" %>
+  <%= f.label :address,"住所" %>
+  <%= f.text_field :address, placeholder: "住所" %>
+  <%= f.label :tel,"電話番号" %>
+  <%= f.text_field :tel, placeholder:"電話番号" %>
+  <%= f.label :memo,"備考" %>
+  <%= f.text_area :memo, placeholder:"備考", cols:20, rows:10 %>
+  <%= f.submit "登録する" %>
+<% end %>

@@ -14,4 +14,13 @@
     <%= seminar.description %>
     </div>
   <% end %>
+  <% @venues.each do |venue| %>
+    <div class="container_venue">
+    <%= link_to venue.name, venue_path(venue.id) %>
+  <% end %>
+
+  <div class ="button_new_seminar">
+    <%= link_to "会場を登録する", new_venue_path %>
+  </div>
+
 </div>

@@ -41,10 +41,11 @@
 |Column|Type|Options|
 |---|---|---|
 |name|string|null:false, unique:true|
-|adress|string|null:false|
-|tel|integer|null:false|
+|postal_code|string|null:false|
+|address|string|null:false|
+|tel|string|null:false|
 |memo|text||
-|image|text||
+|image|text|
 
 #### Assosciaion
 - has_many:seminars,through: :seminars-venues
