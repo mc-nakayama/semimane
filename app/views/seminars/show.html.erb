@@ -1,0 +1,19 @@
+<h1>seminar_show</h1>
+
+<div class="contents_row">
+  <div class= "contents">
+    <%= @seminar.name %>
+    <%= @seminar.style %>
+    <%= @seminar.description %>
+  </div>
+  <div class="more">
+  <ul class="more_list">
+    <li>
+      <%= link_to '編集', edit_seminar_path(@seminar.id) %>
+    </li>
+    <li>
+      <%= link_to '削除',seminar_path(@seminar.id), method: :delete %>
+    </li>
+  </ul>
+  </div>
+</div>

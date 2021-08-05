@@ -1,7 +1,12 @@
 class SeminarsController < ApplicationController
+  before_action :set_seminar, only:[:show]
+
   def index
     @seminars = Seminar.all
     @venues = Venue.all
+  end
+
+  def show
   end
 
   def new
@@ -21,4 +26,10 @@ class SeminarsController < ApplicationController
   def seminar_params
     params.require(:seminar).permit(:name,:style,:description)
   end
+
+  def set_seminar
+    @seminar = Seminar.find(params[:id])
+  end
+
+
 end
