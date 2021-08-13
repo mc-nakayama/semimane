@@ -1,5 +1,5 @@
 class SeminarsController < ApplicationController
-  before_action :set_seminar, only:[:show]
+  before_action :set_seminar, only:[:show,:edit]
 
   def index
     @seminars = Seminar.all
@@ -21,6 +21,10 @@ class SeminarsController < ApplicationController
       render :new
     end
   end
+  
+  def edit
+  end
+
   
   private
   def seminar_params
