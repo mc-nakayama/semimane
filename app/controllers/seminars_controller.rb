@@ -1,5 +1,5 @@
 class SeminarsController < ApplicationController
-  before_action :set_seminar, only:[:show,:edit]
+  before_action :set_seminar, only:[:show,:edit,:update]
 
   def index
     @seminars = Seminar.all
@@ -25,6 +25,10 @@ class SeminarsController < ApplicationController
   def edit
   end
 
+  def update
+    @seminar.update!(seminar_params)
+    redirect_to seminar_path, notice: "セミナー「#{@seminar.name}」を更新しました。"
+  end
   
   private
   def seminar_params
