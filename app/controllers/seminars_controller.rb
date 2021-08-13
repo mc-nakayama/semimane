@@ -1,7 +1,12 @@
 class SeminarsController < ApplicationController
+  before_action :set_seminar, only:[:show,:edit,:update,:destroy]
+
   def index
     @seminars = Seminar.all
     @venues = Venue.all
+  end
+
+  def show
   end
 
   def new
@@ -17,8 +22,27 @@ class SeminarsController < ApplicationController
     end
   end
   
+  def edit
+  end
+
+  def update
+    @seminar.update!(seminar_params)
+    redirect_to seminar_path, notice: "セミナー「#{@seminar.name}」を更新しました。"
+  end
+  
+  def destroy
+    @seminar.destroy
+    redirect_to root_path, notice:'セミナーを削除しました' 
+  end
+
   private
   def seminar_params
     params.require(:seminar).permit(:name,:style,:description)
   end
+
+  def set_seminar
+    @seminar = Seminar.find(params[:id])
+  end
+
+
 end

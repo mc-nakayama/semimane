@@ -1,0 +1,8 @@
+<h1>seminar_edit<h1>
+
+<%= form_with(model:@seminar,local:true) do |f| %>
+  <%= f.text_field :name, placeholder:"#{@seminar.name}" %>
+  <%= f.select :style, [["オンライン","オンライン"],["対面","対面"],["オンライン／対面","オンライン／対面"]],include_blank: "#{@seminar.style}" %>
+  <%= f.text_area :description, placeholder:"#{}", col:20, rows:10 %>
+  <%= f.submit "登録する" %>
+<% end %>

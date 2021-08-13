@@ -9,7 +9,7 @@
 <div class="container">
   <% @seminars.each do |seminar| %>
     <div class="container_seminar">
-    <%= seminar.name %>
+    <%= link_to "#{seminar.name}", seminar_path(seminar.id) %>
     <%= seminar.style %>
     <%= seminar.description %>
     </div>
