@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_28_102341) do
+ActiveRecord::Schema.define(version: 2021_08_16_121328) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,15 @@ ActiveRecord::Schema.define(version: 2021_06_28_102341) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["name"], name: "index_seminars_on_name"
+  end
+
+  create_table "seminars_venues", force: :cascade do |t|
+    t.bigint "seminar_id"
+    t.bigint "venue_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["seminar_id"], name: "index_seminars_venues_on_seminar_id"
+    t.index ["venue_id"], name: "index_seminars_venues_on_venue_id"
   end
 
   create_table "venues", force: :cascade do |t|
@@ -36,4 +45,6 @@ ActiveRecord::Schema.define(version: 2021_06_28_102341) do
     t.index ["name"], name: "index_venues_on_name"
   end
 
+  add_foreign_key "seminars_venues", "seminars"
+  add_foreign_key "seminars_venues", "venues"
 end
