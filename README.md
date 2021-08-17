@@ -50,7 +50,7 @@
 #### Assosciaion
 - has_many:seminars,through: :seminars-venues
 
-### seminars-venues-table
+### seminars_venues_table
 |Column|Type|Options|
 |---|---|---|
 |seminar|reference|foreign_key:true|
@@ -65,9 +65,8 @@
 |---|---|---|
 |scheduled_date|date|null:false|
 |scheduled_time|time|null:false|
-|revervation|integer|null:false|
+|reservation|integer|null:false|
 |participants|interger|null:false|
-|seminars_id|reference|foreign_key:true|
 
 #### Assosciaion
 - belongs_to:seminar
