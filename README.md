@@ -63,8 +63,8 @@
 ### schedules_table
 |Column|Type|Options|
 |---|---|---|
-|scheduled_date|date|null:false|
-|scheduled_time|time|null:false|
+|schedule_date|date|null:false|
+|schedule_time|time|null:false|
 |reservation|integer|null:false|
 |participants|interger|null:false|
 

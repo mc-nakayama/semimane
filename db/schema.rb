@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_16_121328) do
+ActiveRecord::Schema.define(version: 2021_08_18_025624) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "schedules", force: :cascade do |t|
+    t.date "schedule_date", null: false
+    t.time "schedule_time", null: false
+    t.integer "reservation", null: false
+    t.integer "participation", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "seminars", force: :cascade do |t|
     t.string "name", null: false
