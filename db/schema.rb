@@ -17,7 +17,8 @@ ActiveRecord::Schema.define(version: 2021_08_18_025624) do
 
   create_table "schedules", force: :cascade do |t|
     t.date "schedule_date", null: false
-    t.time "schedule_time", null: false
+    t.time "start_time", null: false
+    t.time "stop_time", null: false
     t.integer "reservation", null: false
     t.integer "participation", null: false
     t.datetime "created_at", precision: 6, null: false

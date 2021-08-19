@@ -64,7 +64,8 @@
 |Column|Type|Options|
 |---|---|---|
 |schedule_date|date|null:false|
-|schedule_time|time|null:false|
+|start_time|time|null:false|
+|stop_time|time|null:false|
 |reservation|integer|null:false|
 |participants|interger|null:false|
 

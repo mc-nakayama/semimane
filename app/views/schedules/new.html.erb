@@ -1,1 +1,16 @@
 <h1>schedule#new</h1>
+
+<%= form_with(model:@schedule,local:true) do |f| %>
+  <%= f.label :schedule_date,"日付" %>
+  <%= f.date_field :schedule_date %>
+  <%= f.label :start_time, "開始時刻"%>
+  <%= f.time_field :start_time %>
+  <%= f.label :stop_time, "終了時刻" %>
+  <%= f.time_field :stop_time %>
+  <%# 所要時間を計算させるメソッドを記載 %>
+  <%# 登録したセミナーから選ばせる %>
+  <%# 登録した会場から選ばせる %>
+  <%# メモを記載させる %>
+
+
+<% end %>
