@@ -37,6 +37,7 @@
 - has_many:venues,through: :semininars-venues
 - has_many:schedules
 
+
 ### venues_table
 |Column|Type|Options|
 |---|---|---|
@@ -45,10 +46,12 @@
 |address|string|null:false|
 |tel|string|null:false|
 |memo|text||
-|image|text|
+|image|text||
 
 #### Assosciaion
 - has_many:seminars,through: :seminars-venues
+- has_many:seminars_venues
+- has_many:schedule
 
 ### seminars_venues_table
 |Column|Type|Options|
@@ -58,7 +61,7 @@
 
 #### Assosciaion
 - belongs_to :seminar
-- belongs_to :belong
+- belongs_to :venue
 
 ### schedules_table
 |Column|Type|Options|
@@ -68,10 +71,14 @@
 |stop_time|time|null:false|
 |reservation|integer|null:false|
 |participants|interger|null:false|
+|seminar_id|references|foreign_key:true|
+|venue_id|references|foreign_key:true|
 
 #### Assosciaion
 - belongs_to:seminar
 - has_one:balace_of_payment
+- belongs_to:seminar
+- belongs_to:venue
 
 ### balance_of_payments_table
 |Column|Type|Options|
