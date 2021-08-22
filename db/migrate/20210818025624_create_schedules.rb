@@ -6,6 +6,7 @@ class CreateSchedules < ActiveRecord::Migration[6.0]
       t.time :stop_time,null:false
       t.integer :reservation,null:false
       t.integer :participation,null:false
+      t.text :memo
       t.timestamps
     end
   end

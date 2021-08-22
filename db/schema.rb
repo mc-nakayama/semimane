@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2021_08_22_001904) do
     t.time "stop_time", null: false
     t.integer "reservation", null: false
     t.integer "participation", null: false
+    t.text "memo"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "seminar_id"

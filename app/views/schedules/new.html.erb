@@ -4,9 +4,9 @@
   <%= f.label :schedule_date,"日付" %>
   <%= f.date_field :schedule_date %>
   <%= f.label :start_time, "開始時刻"%>
-  <%= f.time_field :start_time %>
+  <%= f.time_field :start_time,step:1800 %>
   <%= f.label :stop_time, "終了時刻" %>
-  <%= f.time_field :stop_time %>
+  <%= f.time_field :stop_time,step:1800 %>
   <%# 所要時間を計算させるメソッドを記載 %>
   <%= f.label :seminar_id, "セミナー名" %>
   <%= f.collection_select :seminar_id, Seminar.all, :id,:name,include_blank:true %>
