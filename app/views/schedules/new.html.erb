@@ -8,8 +8,10 @@
   <%= f.label :stop_time, "終了時刻" %>
   <%= f.time_field :stop_time %>
   <%# 所要時間を計算させるメソッドを記載 %>
-  <%# 登録したセミナーから選ばせる %>
-  <%# 登録した会場から選ばせる %>
+  <%= f.label :seminar_id, "セミナー名" %>
+  <%= f.collection_select :seminar_id, Seminar.all, :id,:name,include_blank:true %>
+  <%= f.label :venue_id, "会場名" %>
+  <%= f.collection_select :venue_id, Venue.all, :id,:name,include_blank:true %>
   <%# メモを記載させる %>
 
 

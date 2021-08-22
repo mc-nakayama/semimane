@@ -71,6 +71,7 @@
 |stop_time|time|null:false|
 |reservation|integer|null:false|
 |participants|interger|null:false|
+|memo|text||
 |seminar_id|references|foreign_key:true|
 |venue_id|references|foreign_key:true|
 
