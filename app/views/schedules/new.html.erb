@@ -12,7 +12,11 @@
   <%= f.collection_select :seminar_id, Seminar.all, :id,:name,include_blank:true %>
   <%= f.label :venue_id, "会場名" %>
   <%= f.collection_select :venue_id, Venue.all, :id,:name,include_blank:true %>
-  <%# メモを記載させる %>
-
-
+  <%= f.label :reservation,"予約可能数(半角数字)" %>
+  <%= f.number_field :reservation %>名
+  <%= f.label :participation,"参加人数(半角数字)" %>
+  <%= f.number_field :participation %>名
+  <%= f.label :memo,"備考" %>
+  <%= f.text_area :memo, rows:20,col:40 %>
+  <%= f.submit"登録する" %>
 <% end %>
