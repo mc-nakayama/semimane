@@ -4,6 +4,7 @@ class SeminarsController < ApplicationController
   def index
     @seminars = Seminar.all
     @venues = Venue.all
+    @schedule = Schedule.all
   end
 
   def show

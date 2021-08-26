@@ -2,11 +2,11 @@
 
 <h2>講座一覧</h2>
 
-<div class ="button_new_seminar">
-  <%= link_to "新規講座を登録する", new_seminar_path %>
-</div>
-
 <div class="container">
+  <div class ="button_new_seminar">
+    <%= link_to "新規講座を登録する", new_seminar_path %>
+  </div>
+
   <% @seminars.each do |seminar| %>
     <div class="container_seminar">
     <%= link_to "#{seminar.name}", seminar_path(seminar.id) %>
@@ -14,13 +14,30 @@
     <%= seminar.description %>
     </div>
   <% end %>
+  
   <% @venues.each do |venue| %>
     <div class="container_venue">
-    <%= link_to venue.name, venue_path(venue.id) %>
+      <%= link_to venue.name, venue_path(venue.id) %>
+    </div>
   <% end %>
 
   <div class ="button_new_seminar">
     <%= link_to "会場を登録する", new_venue_path %>
   </div>
+
+    <div class="button_new_schedule">
+    <%= link_to "日程を登録する", new_schedule_path %>
+  </div>
+
+  <% @schedule.each do |schedule| %>
+    <div class="container_schedule">
+    <%= link_to schedule.seminar.name, root_path %>
+    <ul class="schedule_info">
+    <li>
+      日付：<%= schedule.schedule_date %>
+    </li>
+    </ul>
+    </div>
+  <% end %>
 
 </div>

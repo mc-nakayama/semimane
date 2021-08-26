@@ -5,7 +5,6 @@ class SchedulesController < ApplicationController
 
   def create
     @schedule = Schedule.create(schedule_params)
-    binding.pry
     redirect_to root_path, notice: 'を登録しました'
   end
   
