@@ -31,7 +31,7 @@
 
   <% @schedule.each do |schedule| %>
     <div class="container_schedule">
-    <%= link_to schedule.seminar.name, root_path %>
+    <%= link_to schedule.seminar.name, schedule_path(schedule.id) %>
     <ul class="schedule_info">
     <li>
       日付：<%= schedule.schedule_date %>
